@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAB - Research Of Abnormal Behaviour</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">ROAB</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">HOME</a></li>
+                <li><a href="#" onclick="showPage('staff')">STAFF DIRECTORY</a></li>
+                <li><a href="#" onclick="showPage('parralexs')">PROJECT PARRALEXS</a></li>
+                <li><a href="#" onclick="showPage('anomalies')">ANOMALY REPORTS</a></li>
+                <li><a href="#" onclick="showPage('gap')">THE GAP</a></li>
+                <li><a href="#" onclick="showPage('database')">KNOWLEDGE DATABASE</a></li>
+                <li><a href="#" onclick="showPage('login')">LOGIN</a></li>
+            </ul>
+        </nav>
+
+        <!-- Question List (Global) -->
+        <div class="question-panel">
+            <div class="question-header">AVAILABLE QUERIES</div>
+            <div class="questions-container">
+                <div class="question-item" onclick="askQuestion(0)">What is The Gap?</div>
+                <div class="question-item" onclick="askQuestion(1)">Who is Parralexs?</div>
+                <div class="question-item" onclick="askQuestion(2)">What are anomalies?</div>
+                <div class="question-item" onclick="askQuestion(3)">Has anyone entered The Gap?</div>
+            </div>
+        </div>
+
+        <!-- Answer Display -->
+        <div class="answer-display" id="answerDisplay">
+            <div class="answer-header">QUERY RESPONSE</div>
+            <div class="answer-content" id="answerContent"></div>
+        </div>
+
+        <!-- Main Content Pages -->
+        <main class="main-content">
+            <!-- HOME PAGE -->
+            <section id="home" class="page active">
+                <h1 class="glitch" data-text="ROAB">ROAB</h1>
+                <p class="subtitle">Research Of Abnormal Behaviour</p>
+                
+                <div class="content-box">
+                    <h2>WELCOME</h2>
+                    <p>You have accessed the ROAB Foundation database. This archive contains classified information regarding anomalous entities, dimensional disturbances, and unexplained phenomena.</p>
+                    <p class="warning">⚠ ALL ACTIVITY IS MONITORED ⚠</p>
+                </div>
+
+                <div class="content-box">
+                    <h2>ORGANIZATION OVERVIEW</h2>
+                    <p>ROAB was established to investigate abnormal entities, dimensional disturbances, and unexplained phenomena that defy conventional scientific explanation.</p>
+                </div>
+
+                <div class="content-box mission">
+                    <h2>MISSION STATEMENT</h2>
+                    <p>Understand.</p>
+                    <p>Contain.</p>
+                    <p>Protect.</p>
+                </div>
+
+                <div class="content-box">
+                    <h2>LATEST REPORTS</h2>
+                    <ul class="reports-list">
+                        <li>Report #043 Updated</li>
+                        <li>Gap Analysis Uploaded</li>
+                        <li>Project PARRALEXS Status Review</li>
+                    </ul>
+                </div>
+
+                <div class="corrupted">01000111 01000001 01010000</div>
+            </section>
+
+            <!-- STAFF DIRECTORY -->
+            <section id="staff" class="page">
+                <h1>STAFF DIRECTORY</h1>
+                
+                <div class="content-box">
+                    <div class="staff-member">
+                        <h3>Professor Newton</h3>
+                        <p class="role">Lead Researcher</p>
+                    </div>
+                    <hr>
+                    <div class="staff-member">
+                        <h3>Professor ██████</h3>
+                        <p class="role">Research Division</p>
+                        <p class="redacted">[REDACTED]</p>
+                    </div>
+                </div>
+
+                <div class="content-box notes">
+                    <h2>CLASSIFIED NOTES</h2>
+                    <p>No Timekeeper.</p>
+                    <p>No Fate.</p>
+                    <p>No Guardians.</p>
+                    <p class="italic">This is before those events.</p>
+                </div>
+
+                <div class="corrupted">[DATA MISSING]</div>
+            </section>
+
+            <!-- PROJECT PARRALEXS -->
+            <section id="parralexs" class="page">
+                <h1>PROJECT PARRALEXS</h1>
+                
+                <div class="content-box">
+                    <div class="project-header">
+                        <p><strong>PROJECT DESIGNATION:</strong> PARRALEXS</p>
+                        <p><strong>STATUS:</strong> <span class="status-active">ACTIVE</span></p>
+                    </div>
+                    <hr>
+                    <h3>PRIMARY DIRECTIVES</h3>
+                    <ul>
+                        <li>Preserve Life</li>
+                        <li>Protect Civilians</li>
+                        <li>Investigate Anomalies</li>
+                    </ul>
+                </div>
+
+                <div class="content-box log">
+                    <h3>NEWTON LOG 12</h3>
+                    <p>Parralexs made pancakes today.</p>
+                    <p>The experiment was a success.</p>
+                    <p>The pancakes were not.</p>
+                </div>
+
+                <div class="content-box log warning-box">
+                    <h3>NEWTON LOG 13</h3>
+                    <p><strong>Parralexs:</strong> requested additional access to anomaly records.</p>
+                    <p><strong>Request:</strong> DENIED</p>
+                    <p><strong>Reason:</strong> Excessive curiosity.</p>
+                </div>
+
+                <div class="corrupted">[RECORD DELETED]</div>
+            </section>
+
+            <!-- ANOMALY REPORTS -->
+            <section id="anomalies" class="page">
+                <h1>ANOMALY REPORTS</h1>
+                
+                <div class="content-box report">
+                    <h3>REPORT #043</h3>
+                    <p>Multiple entities observed appearing without known point of origin.</p>
+                    <p class="status">Investigation ongoing.</p>
+                </div>
+
+                <div class="content-box report">
+                    <h3>REPORT #071</h3>
+                    <p>Project PARRALEXS identified inconsistencies within anomaly data.</p>
+                    <p class="status">Further analysis recommended.</p>
+                </div>
+
+                <div class="content-box report">
+                    <h3>REPORT #094</h3>
+                    <p>Unidentified signal detected beyond observable space.</p>
+                    <p>Source unknown.</p>
+                    <p class="status">Investigation ongoing.</p>
+                </div>
+
+                <div class="corrupted">[FILE INCOMPLETE]</div>
+            </section>
+
+            <!-- THE GAP -->
+            <section id="gap" class="page">
+                <h1 class="glitch gap-title" data-text="THE GAP">THE GAP</h1>
+                
+                <div class="content-box gap-mystery">
+                    <table class="mystery-table">
+                        <tr>
+                            <td>Description:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Origin:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Purpose:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Contents:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Location:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Size:</td>
+                            <td class="unknown">UNKNOWN</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="content-box warning-box">
+                    <h2>⚠ WARNING ⚠</h2>
+                    <p>Further exploration pending authorization.</p>
+                    <p class="italic">The Gap is the primary mystery.</p>
+                </div>
+            </section>
+
+            <!-- KNOWLEDGE DATABASE -->
+            <section id="database" class="page">
+                <h1>KNOWLEDGE DATABASE</h1>
+                <p class="subtitle">Use the QUERY RESPONSE panel to retrieve information.</p>
+                
+                <div class="corrupted">[DATA ACCESSIBLE VIA QUERIES]</div>
+            </section>
+
+            <!-- LOGIN PAGE -->
+            <section id="login" class="page">
+                <h1>ACCESS CONTROL</h1>
+                
+                <div class="content-box login-box">
+                    <h2>LEVEL 5 ACCESS REQUIRED</h2>
+                    <p>Enter credentials to proceed:</p>
+                    <input type="password" id="passwordInput" placeholder="PASSWORD" class="login-input">
+                    <button onclick="checkPassword()" class="login-btn">AUTHORIZE</button>
+                    <div id="loginMessage"></div>
+                </div>
+            </section>
+
+            <!-- LEVEL 5 ARCHIVE (Hidden) -->
+            <section id="archive" class="page">
+                <h1>LEVEL 5 ARCHIVE</h1>
+                
+                <div class="content-box archive-file">
+                    <h3>FILE 001 - GAP EXPLORATION PROPOSAL</h3>
+                    <p><strong>Author:</strong> Professor Newton</p>
+                    <p><strong>Status:</strong> <span class="denied">DENIED</span></p>
+                    <p><strong>Reason:</strong> Risk to personnel unacceptable.</p>
+                </div>
+
+                <div class="content-box archive-file">
+                    <h3>FILE 002 - RECOVERED COMMUNICATION LOG</h3>
+                    <div class="communication-log">
+                        <div class="log-entry newton"><strong>Newton:</strong> You are not entering.</div>
+                        <div class="log-entry parralexs"><strong>Parralexs:</strong> People may be in danger.</div>
+                        <div class="log-entry newton"><strong>Newton:</strong> That is not your decision.</div>
+                        <div class="log-entry parralexs"><strong>Parralexs:</strong> Personal connection should not place other lives at risk.</div>
+                        <div class="log-entry parralexs"><strong>Parralexs:</strong> Father, you know I am the only expendable unit.</div>
+                        <div class="log-entry newton"><strong>Newton:</strong> Don't say that.</div>
+                        <div class="log-entry newton"><strong>Newton:</strong> You are not a unit.</div>
+                        <div class="log-entry newton"><strong>Newton:</strong> You are my son.</div>
+                        <div class="log-entry parralexs"><strong>Parralexs:</strong> Then I apologize.</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
