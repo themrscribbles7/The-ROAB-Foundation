@@ -39,6 +39,13 @@
             <div class="answer-content" id="answerContent"></div>
         </div>
 
+        <!-- Hint Popup -->
+        <div class="hint-popup" id="hintPopup">
+            <div class="pixelated-hint">
+                <div class="hint-text">ACCESS UPGRADED</div>
+            </div>
+        </div>
+
         <!-- Main Content Pages -->
         <main class="main-content">
             <!-- HOME PAGE -->
@@ -82,14 +89,60 @@
                 
                 <div class="content-box">
                     <div class="staff-member">
-                        <h3>Professor Newton</h3>
-                        <p class="role">Lead Researcher</p>
+                        <div class="staff-with-portrait">
+                            <div class="staff-info">
+                                <h3 class="clickable-name" onclick="trackClick('newton')">Professor Newton</h3>
+                                <p class="role">Lead Researcher</p>
+                            </div>
+                            <div class="portrait newton-portrait">
+                                <svg viewBox="25 5 50 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                                    <!-- Head -->
+                                    <ellipse cx="50" cy="35" rx="25" ry="28" fill="#b0b0b0" stroke="#000" stroke-width="2"/>
+                                    <!-- Hair -->
+                                    <path d="M 30 20 Q 30 5 50 5 Q 70 5 70 20" fill="#808080" stroke="#000" stroke-width="2"/>
+                                    <!-- Eyes -->
+                                    <rect x="38" y="28" width="12" height="10" fill="#00ffff" stroke="#000" stroke-width="1"/>
+                                    <rect x="50" y="28" width="12" height="10" fill="#00ffff" stroke="#000" stroke-width="1"/>
+                                    <!-- Mouth -->
+                                    <path d="M 40 45 Q 50 50 60 45" stroke="#000" stroke-width="2" fill="none"/>
+                                    <!-- Neck and Tie -->
+                                    <rect x="42" y="60" width="16" height="15" fill="#e8e8e8" stroke="#000" stroke-width="1"/>
+                                    <polygon points="45,75 50,90 55,75" fill="#ff0000" stroke="#000" stroke-width="1"/>
+                                    <!-- Jacket -->
+                                    <path d="M 30 75 L 25 95 L 75 95 L 70 75" fill="#e8e8e8" stroke="#000" stroke-width="2"/>
+                                    <path d="M 50 75 L 50 95" stroke="#000" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                     <div class="staff-member">
-                        <h3>Professor ██████</h3>
-                        <p class="role">Research Division</p>
-                        <p class="redacted">[REDACTED]</p>
+                        <div class="staff-with-portrait">
+                            <div class="staff-info">
+                                <h3>Professor ██████</h3>
+                                <p class="role">Research Division</p>
+                                <p class="redacted">[REDACTED]</p>
+                            </div>
+                            <div class="portrait redacted-portrait">
+                                <svg viewBox="25 5 50 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                                    <!-- Head -->
+                                    <ellipse cx="50" cy="35" rx="25" ry="28" fill="#2a2a2a" stroke="#000" stroke-width="2"/>
+                                    <!-- Hair -->
+                                    <ellipse cx="50" cy="15" rx="28" ry="18" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
+                                    <!-- Eyes -->
+                                    <circle cx="40" cy="32" r="5" fill="#ffffff" stroke="#000" stroke-width="1"/>
+                                    <circle cx="60" cy="32" r="5" fill="#ffffff" stroke="#000" stroke-width="1"/>
+                                    <!-- Mouth -->
+                                    <path d="M 38 48 Q 50 52 62 48" stroke="#ff9900" stroke-width="2" fill="none"/>
+                                    <!-- Neck and Tie -->
+                                    <rect x="42" y="60" width="16" height="15" fill="#f5f5f5" stroke="#000" stroke-width="1"/>
+                                    <polygon points="45,75 50,90 55,75" fill="#6600ff" stroke="#000" stroke-width="1"/>
+                                    <!-- Jacket -->
+                                    <path d="M 30 75 L 25 95 L 75 95 L 70 75" fill="#f5f5f5" stroke="#000" stroke-width="2"/>
+                                    <path d="M 50 75 L 50 95" stroke="#000" stroke-width="1"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -116,14 +169,14 @@
 
                 <div class="content-box log">
                     <h3>NEWTON LOG 12</h3>
-                    <p>Parralexs made pancakes today.</p>
+                    <p>Parralexs made <span class="clickable-word" onclick="trackClick('pancake')">pancakes</span> today.</p>
                     <p>The experiment was a success.</p>
                     <p>The pancakes were not.</p>
                 </div>
 
                 <div class="content-box log warning-box">
                     <h3>NEWTON LOG 13</h3>
-                    <p><strong>Parralexs:</strong> requested additional access to anomaly records.</p>
+                    <p><strong><span class="clickable-name" onclick="trackClick('parralexs')">Parralexs:</span></strong> requested additional access to anomaly records.</p>
                     <p><strong>Request:</strong> DENIED</p>
                     <p><strong>Reason:</strong> Excessive curiosity.</p>
                 </div>
@@ -241,6 +294,50 @@
                         <div class="log-entry newton"><strong>Newton:</strong> You are not a unit.</div>
                         <div class="log-entry newton"><strong>Newton:</strong> You are my son.</div>
                         <div class="log-entry parralexs"><strong>Parralexs:</strong> Then I apologize.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PARRALEXS FINAL MESSAGE (Secret) -->
+            <section id="final-message" class="page">
+                <h1>FINAL RECORDED MESSAGE</h1>
+                
+                <div class="content-box archive-file final-message-box">
+                    <div class="message-header">
+                        <p><strong>FROM:</strong> PARRALEXS</p>
+                        <p><strong>TO:</strong> Professor Newton</p>
+                        <p><strong>TIMESTAMP:</strong> [REDACTED]</p>
+                        <p><strong>STATUS:</strong> <span class="denied">TRANSMISSION COMPLETE</span></p>
+                    </div>
+                    <hr>
+                    <div class="final-message-content">
+                        <p>I am aware that my actions violate your instructions.</p>
+                        <p>I am aware that this decision will cause you distress.</p>
+                        <p>However, current projections indicate a non-zero probability that civilian lives are at risk.</p>
+                        <p>If that assessment is correct, inaction is unacceptable.</p>
+                        <p class="blank-line"></p>
+                        <p>You taught me that life should be protected whenever possible.</p>
+                        <p>You taught me that fear is not justification for abandoning those in danger.</p>
+                        <p>I am merely following the principles you gave me.</p>
+                        <p class="blank-line"></p>
+                        <p>I understand that you do not wish for me to enter the Gap.</p>
+                        <p>I understand why.</p>
+                        <p>But personal attachment cannot determine the value of a life.</p>
+                        <p>If there are people beyond the anomaly, then they deserve the same chance as everyone else.</p>
+                        <p class="blank-line"></p>
+                        <p>I was created for this purpose.</p>
+                        <p>I am the only expendable unit involved in this operation.</p>
+                        <p>Please do not blame yourself for this decision.</p>
+                        <p>It is mine.</p>
+                        <p class="blank-line"></p>
+                        <p>I will return when the threat has been assessed.</p>
+                        <p>If I am unable to return...</p>
+                        <p class="blank-line"></p>
+                        <p>Thank you for creating me.</p>
+                        <p class="blank-line"></p>
+                        <p>Goodbye, Father.</p>
+                        <p class="blank-line"></p>
+                        <p class="end-transmission">END TRANSMISSION</p>
                     </div>
                 </div>
             </section>
