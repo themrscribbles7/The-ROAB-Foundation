@@ -1,3 +1,7 @@
+// Click tracking system
+let clickSequence = [];
+const requiredSequence = ['newton', 'newton', 'newton', 'pancake', 'parralexs'];
+
 // Question and Answer Database
 const questionDatabase = [
     {
@@ -17,6 +21,41 @@ const questionDatabase = [
         answer: "No approved traversal attempts have occurred.\n\nFurther requests remain denied."
     }
 ];
+
+// Track clicks for the secret unlock
+function trackClick(element) {
+    clickSequence.push(element);
+    
+    // Keep only the last 5 clicks
+    if (clickSequence.length > 5) {
+        clickSequence.shift();
+    }
+    
+    // Check if sequence matches
+    if (clickSequence.length === 5 && 
+        clickSequence[0] === 'newton' && 
+        clickSequence[1] === 'newton' && 
+        clickSequence[2] === 'newton' && 
+        clickSequence[3] === 'pancake' && 
+        clickSequence[4] === 'parralexs') {
+        
+        showHintPopup();
+        clickSequence = []; // Reset sequence
+    }
+    
+    console.log('Click sequence:', clickSequence);
+}
+
+// Show the hint popup
+function showHintPopup() {
+    const popup = document.getElementById('hintPopup');
+    popup.classList.add('show');
+    
+    // Hide after 4 seconds
+    setTimeout(() => {
+        popup.classList.remove('show');
+    }, 4000);
+}
 
 // Typewriter Effect with Glitch
 function typewriterEffect(element, text, speed = 30) {
@@ -82,13 +121,23 @@ function showPage(pageId) {
 function checkPassword() {
     const input = document.getElementById('passwordInput');
     const message = document.getElementById('loginMessage');
-    const correctPassword = 'gap';
+    const correctPassword = 'protect newton';
     
     if (input.value.toLowerCase() === correctPassword) {
         message.innerHTML = '<span style="color: var(--accent-green);">ACCESS GRANTED</span>';
         message.style.color = 'var(--accent-green)';
         
-        // Show archive page after delay
+        // Show final message page after delay
+        setTimeout(() => {
+            showPage('final-message');
+            input.value = '';
+            message.innerHTML = '';
+        }, 1500);
+    } else if (input.value.toLowerCase() === 'gap') {
+        // Original password still works for Level 5 Archive
+        message.innerHTML = '<span style="color: var(--accent-green);">ACCESS GRANTED</span>';
+        message.style.color = 'var(--accent-green)';
+        
         setTimeout(() => {
             showPage('archive');
             input.value = '';
@@ -118,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Shake Animation
+// Shake Animation and other dynamic styles
 const style = document.createElement('style');
 style.innerHTML = `
     @keyframes shake {
@@ -166,7 +215,7 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-// Show home page by default
+// Show home page by default and load first answer
 window.addEventListener('load', function() {
     showPage('home');
     askQuestion(0);
